@@ -4,4 +4,4 @@ COPY compile.sh .
 COPY entrypoint.sh .
 # TODO COPY the stream collector
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "-c", "./entrypoint.sh"]
