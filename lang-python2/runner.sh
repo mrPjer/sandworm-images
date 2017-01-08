@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "Hello world!"
+python2.7 main.py
