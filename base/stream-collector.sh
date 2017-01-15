@@ -1,7 +1,7 @@
 LOGGER_ENDPOINT="$1"
 LOGGER_TAG="$2"
 
-cat - | while read line
+while IFS= read -r line || [[ -n "$line" ]];
 do
 	curl \
 		"$LOGGER_ENDPOINT" \
