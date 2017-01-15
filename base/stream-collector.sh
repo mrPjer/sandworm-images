@@ -9,10 +9,13 @@ do
 		echo $line;
 	fi
 
-	curl \
-		"$LOGGER_ENDPOINT" \
-		-vvv \
-		--data-urlencode "tag=$LOGGER_TAG" \
-		--data-urlencode "content=$line" \
-		--data-urlencode "timestamp=`date --iso-8601=s`"
+	if [ ! -z "$LOGGER_ENDPOINT" ]; then
+		curl \
+			"$LOGGER_ENDPOINT" \
+			--silent
+			--data-urlencode "tag=$LOGGER_TAG" \
+			--data-urlencode "content=$line" \
+			--data-urlencode "timestamp=`date --iso-8601=s`"
+			> /dev/null
+	fi
 done
