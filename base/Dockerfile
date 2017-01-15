@@ -2,6 +2,6 @@ FROM ubuntu:16.04
 
 COPY compile.sh .
 COPY entrypoint.sh .
-# TODO COPY the stream collector
+COPY stream-collector.sh .
 
 ENTRYPOINT ["/bin/bash", "-c", "./entrypoint.sh"]
